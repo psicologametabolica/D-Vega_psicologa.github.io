@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>D'Vega Clinic</title>
+
+<!-- Fuente Inter -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+  margin:0;
+  font-family:'Inter', sans-serif;
+  background: linear-gradient(
+    135deg,
+    #f4f7fb 0%,
+    #eaf1f9 40%,
+    #f8fbff 100%
+  );
+  color:#1f2937;
+  scroll-behavior: smooth;
+}
+
+/* NAV */
+nav{
+  position:fixed;
+  width:100%;
+  top:0;
+  background:white;
+  box-shadow:0 5px 20px rgba(0,0,0,0.05);
+  padding:18px 5%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  z-index:1000;
+}
+
+nav a{
+  text-decoration:none;
+  margin-left:40px;
+  color:#4b5563;
+  font-weight:500;
+}
+
+nav a:hover{
+  color:#1f5fae;
+}
+  
+.logo-container{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:18px;
+}
+
+.logo-container img{
+  height:35px;
+}
+
+.menu{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.menu a{
+  text-decoration:none;
+  color:#4b5563;
+  font-weight:500;
+  white-space:nowrap;
+}
+
+.menu a:hover{
+  color:#1f5fae;
+}
+
+/* BOTONES */
+.btn{
+  background:#1e4f8a;
+  color:white;
+  padding:10px 22px;
+  border-radius:30px;
+  font-weight:600;
+  text-decoration:none;
+  transition:0.3s;
+  box-shadow:0 4px 15px rgba(30,79,138,0.4);
+}
+
+.btn:hover{
+  background:#163b69;
+  transform:translateY(-2px);
+}
+
+.agendarcita-btn{
+  background:#0a264a;
+} 
+
+.whatsapp-btn{
+  background:#1ebe5d;
+}
+
+.whatsapp-btn{
+  background:#1ebe5d;
+}
+  
+.instagram-btn{
+  background:#cf0a24;
+}
+  
+  .facebook-btn{
+  background:#22d7e0;
+}
+
+  .costos-btn{
+  background:#ffffff;
+}
+ 
+  .blank-btn{
+  background:#ffffff;
+}
+  
+/* HERO NUEVO */
+.hero-card{
+  margin-top:120px;
+  padding:60px 8%;
+}
+
+.hero-container{
+  background: linear-gradient(
+    145deg,
+    #eef2f7,
+    #ffffff
+  );
+  border-radius:30px;
+  padding:60px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:60px;
+  flex-wrap:wrap;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+}
+
+
+.hero-text{
+  flex:1;
+  min-width:320px;
+}
+
+.hero-text h1{
+  font-size:42px;
+  margin-bottom:10px;
+}
+
+.hero-text h3{
+  font-weight:500;
+  margin-bottom:20px;
+  color:#374151;
+}
+
+.frase{
+  max-width:520px;
+  margin-bottom:25px;
+  line-height:1.6;
+}
+
+.diplomado{
+  background:#dbe7f5;
+  padding:18px;
+  border-radius:15px;
+  margin-bottom:25px;
+  max-width:420px;
+}
+
+.botones{
+  display:flex;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+.hero-img{
+  flex:1;
+  text-align:center;
+}
+
+.hero-img img{
+  width:100%;
+  max-width:420px;
+  border-radius:25px;
+ box-shadow:
+  0 30px 60px rgba(0,0,0,0.12),
+  inset 0 1px 0 rgba(255,255,255,0.7);
+}
+
+/* SECCIONES */
+.section{
+  padding:50px 10%;
+}
+
+.section h2{
+  text-align:center;
+  font-size:28px;
+  font-weight:600;
+  margin-bottom:50px;
+  color:#1e4f8a;
+}
+
+/* TARJETAS */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
+}
+
+.card{
+  background:white;
+  padding:30px;
+  border-radius:18px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.06);
+  border:1px solid #e5e7eb;
+}
+
+.card h3{
+  margin-bottom:15px;
+  font-weight:600;
+  color:#1e4f8a;
+}
+
+  .card h4{
+  margin-bottom:15px;
+  font-size: 18px;
+  font-weight:600;
+  color:#1e4f8a;
+}
+  .card h5{
+ background:white;
+  padding:30px;
+  border-radius:18px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.06);
+  border:1px solid #e5e7eb;
+}
+/* CTA */
+.cta{
+  background:#1e4f8a;
+  color:white;
+  padding:80px 20px;
+  text-align:center;
+}
+
+.cta h2{
+  color:white;
+  margin-bottom:15px;
+}
+
+  
+/* MAPA */
+iframe{
+  width:100%;
+  height:400px;
+  border:none;
+  border-radius:20px;
+}
+
+/* FOOTER */
+footer{
+  background:#0f172a;
+  color:#cbd5e1;
+  text-align:center;
+  padding:30px;
+  font-size:14px;
+}
+
+/* RESPONSIVE */
+@media(max-width:1200px){
+  .hero-container{
+    margin: 0 auto;
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .hero-text{
+    align-items:center;
+  }
+
+  .diplomado{
+    margin:auto;
+  }
+}
+  
+  /* Diseño celular */
+@media (max-width: 768px){
+
+  .hero-container{
+    flex-direction: column;
+    padding: 30px 20px;   /* menos padding */
+  gap:40px;   /* antes 60px */
+}
+
+
+  .hero-img{
+    margin-top: 10px;
+  }
+  .hero-img{
+    margin-left: -30px;
+  }
+  .hero-img img{
+    max-width: 280px;     /* imagen más pequeña en celular */
+  }
+
+  .botones{
+    justify-content: center;
+  }
+
+  .diplomado{
+    margin: 0 auto 20px auto;
+  }
+
+}
+/* ANIMACION SCROLL */
+.section{
+  opacity:0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.section.visible{
+  opacity:1;
+  transform: translateY(0);
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+  <!-- Logo + Nombre -->
+  <div class="logo-container">
+    <img src="img/logo.png" alt="Logo">
+    <strong>D'Vega Clinic</strong>
+  </div>
+
+  <!-- Menú -->
+  <div class="menu">
+    <a href="#inicio">Inicio</a>
+    <a href="#sobre-mi">Sobre Mí</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#Horarios-Ubicacion">Ubicación</a>
+        <a href="#Horarios-Ubicacion"><span style="color:#ffffff;">Lili Steinfeld</span></a>
+
+  </div>
+</nav>
+
+
+<!-- INICIO -->
+<section class="section" id="inicio">
+<div class="hero-container">
+
+  <!-- TEXTO -->
+  <div class="hero-text">
+    <h1><span style="color:#1e4f8a;">Psic.</span> Cinthia Vega</h1>
+
+    <h3>Psicóloga clínica y metabólica</h3>
+
+    <p class="frase">
+      "Creo en una atención ética, empática y profesional,
+      donde el bienestar y la calidad de vida se abordan de forma integral,
+      respetando la individualidad de cada paciente."
+    </p>
+
+    <div class="diplomado">
+      <strong>Diplomado en:</strong><br>
+      ✓ Primeros auxilios psicológicos (PAP).<br>
+      ✓ Psiconutrición.<br>
+      ✓ Programa para adulto mayor.
+    </div>
+
+    <div class="botones">
+      <a href="https://wa.me/528124388568" class="btn">Agendar Cita</a>
+      <a href="https://wa.me/528124388568" class="btn whatsapp-btn">WhatsApp</a>
+    </div>
+
+    <p style="margin-top:15px; font-weight:500;">
+      Costo de consulta: <strong>$500 MXN</strong>
+    </p>
+
+  </div>
+
+  <!-- IMAGEN -->
+  <div class="hero-img">
+    <img src="img/Foto-cinthia.png" alt="Psic. Cinthia Vega">
+  </div>
+
+</div>
+
+
+</section>
+
+<!-- SOBRE MÍ -->
+<section class="section" id="sobre-mi">
+  <h2>Sobre Mí</h2>
+  <div class="cards">
+    <div class="card">
+      <p>Soy psicóloga clínica con enfoque en la salud y el comportamiento humano, 
+        interesada en la integración entre mente, cuerpo y hábitos. Mi trabajo se centra en acompañar 
+        a las personas a comprender su relación con la alimentación, el estrés, las emociones y la salud 
+        desde una perspectiva psicológica basada en evidencia. Así de la misma forma ofrezco terapia cognitivo 
+        conductual , integrando mente, cuerpo, emociones y conducta.</p>
+    </div>
+  </div>
+</section>
+
+  <!-- FILOSOFIA -->
+<section class="section" id="filosofia">
+  <h2>Principios y Enfoque Profesional</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Misión </h3>
+      <p>Brindar atención integral en psicología y medicina, ofreciendo un acompañamiento profesional, ético 
+        y centrado en la persona, que promueva la salud mental y física desde un enfoque humano, científico y 
+        respetuoso de cada proceso individual.</p>
+    </div>
+    <div class="card">
+      <h3>Visión</h3>
+      <p>Ser una clínica integral reconocida por su calidad profesional, ética clínica y enfoque mente–cuerpo, 
+        contribuyendo al bienestar de las personas mediante intervenciones responsables y actualizadas constantemente 
+        orientadas a una mejor calidad de vida.</p>
+    </div>
+    <div class="card">
+      <h3>Valores</h3>
+      <p>-Humanización: Trato digno, respetuoso y personalizado.</p>
+      <p>-Calidad y Seguridad: Atención integral continua con altos estandares.</p>
+    <p>-Innovación: Enoque en tecnología avanzada y salud digna.</p>
+      <p>-Ética y Colaboración: Trabajo colaborativo, empatía y gestión ética.</p>
+    </div>
+  </div>
+</section>
+  
+<!-- SERVICIOS -->
+<section class="section" id="servicios">
+  <h2>Servicios</h2>
+<p style="text-align:center; margin-top:-30px; margin-bottom:40px;">
+Atención especializada para tu bienestar integral
+</p>
+  <div class="cards">
+    <div class="card">
+      <h3>Psicología cognitivo conductual </h3>
+      <p>✓ Acompañamiento emocional</p>
+<p>✓ Toma de decisiones</p>
+<p>✓ Entendimiento y función de las emociones</p>
+<p>✓ Manejo de estrés y ansiedad </p>
+<p>✓ Modificación de pensamiento y conducta</p>
+<p>✓ Modificación de hábitos</p>
+    </div>
+    <div class="card">
+      <h3>Psicología Metabólica</h3>
+      <p>✓ Entendimiento del proceso alimentario</p>
+<p>✓ Mindful eating </p>
+<p>✓ Mejorar la relación con la comida</p>
+<p>✓ Trabajo interdisciplinario con médicos metabólicos</p>
+    </div>
+  </div>
+</section>
+
+  <!-- HORARIOS -->
+<section class="section" id="Horarios-Ubicacion">
+  <h2>Ubicación</h2>
+
+  <div class="cards">
+
+    <div class="card">
+      <h4>Ubicación</h4>
+      <p><strong>Dr. Coss</strong></p>
+      <p>José Ma. Coss #426, interior A, Nte</p>
+      <p>Col. Centro, C.P. 64000, Monterrey, N.L.</p>
+      <br>
+      <p><strong>Horarios:</strong></p>
+      <p>Lunes a Viernes: 8:00am - 1:00pm</p>
+      <p>Sábados: 8:00am - 5:00pm</p>
+    </div>
+
+    <div class="card">
+      <h4>Ubicación</h4>
+      <p><strong>Centro de Especialidades Médicas (CEM)</strong></p>
+      <p>Lic. José Benítez #2704</p>
+      <p>Col. Obispado, C.P. 64060, Monterrey, N.L.</p>
+      <br>
+      <p><strong>Horarios:</strong></p>
+      <p>Lunes a Viernes: 8:00am - 1:00pm</p>
+    </div>
+
+  </div>
+</section>
+
+  
+<!-- CTA -->
+<section class="cta">
+  <h2>¿Listo para agendar tu consulta?</h2>
+  <p>Te ofrezco atención profesional, cercana y enfocada en tu salud integral.</p>
+  <br>
+  <a href="https://wa.me/528124388568" class="btn agendarcita-btn">Agendar Ahora</a>
+  <a href="https://wa.me/528124388568" class="btn whatsapp-btn">Enviar WhatsApp</a>
+    <h2>Conocenos a través de redes</h2>  <br>
+  <a href="https://wa.me/528124388568" class="btn facebook-btn">Facebook</a>
+  <a href="https://www.instagram.com/dvega_clinica_integral?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="btn instagram-btn">Instagram</a>
+</section>
+
+<footer>
+    <strong>Psic. Cinthia Vega</strong> <Br>
+© 2026 D'Vega Clinic | Todos los derechos reservados
+</footer>
+<script>
+const sections = document.querySelectorAll('.section');
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.15 });
+
+sections.forEach(section => {
+  observer.observe(section);
+});
+</script>
+
+</body>
+</html>
